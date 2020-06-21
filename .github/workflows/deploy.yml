@@ -30,5 +30,6 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             cd /home/node/stocker-backend
+            node -v
             npm install
             pm2 restart stocker-backend
