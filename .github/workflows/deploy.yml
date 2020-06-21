@@ -31,3 +31,4 @@ jobs:
           script: |
             cd /home/node/stocker-backend
             npm install
+            pm2 restart stocker-backend
