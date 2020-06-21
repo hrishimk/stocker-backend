@@ -33,6 +33,10 @@ const getData = async () => {
         {
             name: 'low_volatile',
             key: 'NIFTY100 LOW VOLATILITY 30'
+        },
+        {
+            name: 'nifty_200',
+            key: 'NIFTY 200'
         }
     ];
 
