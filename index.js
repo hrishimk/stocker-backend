@@ -12,7 +12,6 @@ http.createServer(async (req, res) => {
 }).listen(port);
 
 const getData = async () => {
-
     const init = {
         headers: {
             'Host': 'www.nseindia.com',
