@@ -1,7 +1,7 @@
 const http = require('http');
 const fetch = require('node-fetch');
-
 const port = 3000;
+const getCookies = require('./getCookies')
 
 http.createServer(async (req, res) => {
     res.statusCode = 200;
@@ -12,6 +12,8 @@ http.createServer(async (req, res) => {
 }).listen(port);
 
 const getData = async () => {
+    const cookies = await getCookies()
+
     const init = {
         headers: {
             'Host': 'www.nseindia.com',
@@ -22,24 +24,26 @@ const getData = async () => {
             'DNT': 1,
             'Connection': 'keep-alive',
             'Upgrade-Insecure-Requests': 1,
+            'Cookie': cookies
         },
     };
 
     const indices = [{
-            name: 'quality',
-            key: 'NIFTY200 QUALITY 30'
-        },
-        {
-            name: 'low_volatile',
-            key: 'NIFTY100 LOW VOLATILITY 30'
-        },
-        {
-            name: 'nifty_200',
-            key: 'NIFTY 200'
-        }
+        name: 'quality',
+        key: 'NIFTY200 QUALITY 30'
+    },
+    {
+        name: 'low_volatile',
+        key: 'NIFTY100 LOW VOLATILITY 30'
+    },
+    {
+        name: 'nifty_200',
+        key: 'NIFTY 200'
+    }
     ];
 
     const url = 'https://www.nseindia.com/api/equity-stockIndices?index=';
+
 
     try {
         return Promise.all(indices.map(async index => {
