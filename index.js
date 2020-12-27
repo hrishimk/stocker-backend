@@ -27,6 +27,10 @@ const getData = async () => {
     {
         name: 'momentum',
         key: 'NIFTY200 MOMENTUM 30'
+    },
+    {
+        name: 'alpha_low_volatile',
+        key: 'NIFTY ALPHA LOW-VOLATILITY 30'
     }
     ]
 
