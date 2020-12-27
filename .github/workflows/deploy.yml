@@ -29,4 +29,5 @@ jobs:
           key: ${{ secrets.KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            ${{ secrets.SCRIPTS }}
+            source ~/.nvm/nvm.sh
+            pm2 stocker-backend restart
