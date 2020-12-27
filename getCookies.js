@@ -15,7 +15,6 @@ const init = {
 };
 
 const getCookies = async () => {
-    console.log('getCookies')
     const res = await fetch(url, init).then(res => {
         return res.headers.get('set-cookie').split(',').map(cookie => cookie.split(';')[0].trim())
     })
