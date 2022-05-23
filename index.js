@@ -31,6 +31,10 @@ const getData = async () => {
     {
         name: 'alpha_low_volatile',
         key: 'NIFTY ALPHA LOW-VOLATILITY 30'
+    },
+    {
+        name: 'dividend_50',
+        key: 'NIFTY DIVIDEND OPPORTUNITIES 50'
     }
     ]
 
